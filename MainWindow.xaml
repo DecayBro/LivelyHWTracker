@@ -10,7 +10,14 @@
     Title="LivelyHWTracker"
     Closed="Window_Closed"
     >
-
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <StackPanel.Resources>
+            <Style TargetType="TextBlock" x:Key="CustomTextBlockStyle">
+                <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                <Setter Property="FontStyle" Value="Italic"/>
+            </Style>
+        </StackPanel.Resources>
+        <TextBlock Text="{x:Bind ViewModel.CpuTemperature}" Style="{StaticResource CustomTextBlockStyle}"/>
+        <TextBlock Text="GPU TEMP: XXX" Style="{StaticResource CustomTextBlockStyle}"/>
     </StackPanel>
 </Window>

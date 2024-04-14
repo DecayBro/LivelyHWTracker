@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="LibreHardwareMonitorLib" Version="0.9.3" />
     <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

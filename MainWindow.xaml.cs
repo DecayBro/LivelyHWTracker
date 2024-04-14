@@ -19,6 +19,7 @@ using Windows.Win32.UI.WindowsAndMessaging;
 using NotifyIcon;
 using static NotifyIcon.NotifyIconTools;
 using System.Runtime.InteropServices;
+using LivelyHWTracker.ViewModels;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
@@ -32,10 +33,14 @@ namespace LivelyHWTracker
         public MainWindow()
         {
             this.InitializeComponent();
+            ViewModel = new MainWindowViewModel();
+            ViewModel.CpuTemperature = 0;
             hWndMain = WinRT.Interop.WindowNative.GetWindowHandle(this);
             string sDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string sIconFile = sDirectory + @"Assets\butterfly.ico";
             m_hIcon = LoadImage(IntPtr.Zero, sIconFile, IMAGE_ICON, 32, 32, LR_LOADFROMFILE);
+           
+
         }
 
         private void Window_Closed(object sender, WindowEventArgs args)
@@ -45,6 +50,9 @@ namespace LivelyHWTracker
             PInvoke.ShowWindow(new HWND(hWndMain), 0);
         }
 
+        
+
+        public MainWindowViewModel ViewModel;
         [DllImport("User32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         public static extern IntPtr LoadImage(IntPtr hInst, string lpszName, UInt32 uType, int cxDesired, int cyDesired, UInt32 fuLoad);
         public const int IMAGE_ICON = 1;
