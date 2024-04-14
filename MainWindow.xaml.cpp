@@ -22,8 +22,10 @@ namespace winrt::LivelyHWTracker::implementation
         throw hresult_not_implemented();
     }
 
+    /*
     void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
     {
         myButton().Content(box_value(L"Clicked"));
-    }
+    }    
+    */
 }
