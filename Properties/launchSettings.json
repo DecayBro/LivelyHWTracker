@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LivelyHWTracker (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "LivelyHWTracker (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
