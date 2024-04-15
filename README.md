@@ -1,2 +1,2 @@
 LivelyHWTracker
-IDE：MicrosoftVisu
+IDE：Microsoft Visul Studio 2022
