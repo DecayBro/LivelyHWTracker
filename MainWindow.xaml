@@ -6,11 +6,29 @@
     xmlns:local="using:LivelyHWTracker"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tb="using:H.NotifyIcon"
     mc:Ignorable="d"
     Title="LivelyHWTracker"
-    Closed="Window_Closed"
+    Closed="MainWindowClosed"
     >
-
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-    </StackPanel>
+    <tb:TaskbarIcon
+        ToolTipText="LivelyHWTracker"
+        IconSource="/Assets/butterfly.ico"
+        MenuActivation="LeftOrRightClick"
+        PopupActivation="DoubleClick"
+        x:Name="trayIcon"
+        Visibility="Collapsed"
+    >
+         <tb:TaskbarIcon.ContextFlyout>
+         <MenuFlyout AreOpenCloseAnimationsEnabled="False">
+                <MenuFlyoutItem
+                    Text="Show Window"
+                    />
+                <MenuFlyoutSeparator />
+                <MenuFlyoutItem
+                    Text="Exit"
+                    />
+            </MenuFlyout>
+        </tb:TaskbarIcon.ContextFlyout>
+    </tb:TaskbarIcon>
 </Window>
